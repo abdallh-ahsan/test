@@ -4,7 +4,7 @@ const fs = require("fs");
 const dateFormat = require('dateformat');
 const client = new Discord.Client(); 
 const Canvas = require("canvas"); //npm i canvas
-const prefix = "YOUR Prefix Here" // برفكس مثلا -
+const prefix = "-" // برفكس مثلا -
 let profile = JSON.parse(fs.readFileSync("profile.json", "utf8"))
 
 client.on('ready', () => {
@@ -615,8 +615,8 @@ message.channel.send(`** ${men.username}, :credit_card: balance` + " is `" + `${
 if(message.content.startsWith(prefix + "daily")) {
   if(profile[message.author.id].lastDaily != moment().format('day')) {
     profile[message.author.id].lastDaily = moment().format('day')
-    profile[message.author.id].credits += 200
-     message.channel.send(`**${message.author.username} you collect your \`200\` :dollar: daily pounds**`)
+    profile[message.author.id].credits += 100000
+     message.channel.send(`**${message.author.username} you collect your \`100000\` :dollar: daily pounds**`)
 } else {
     message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('day').fromNow()}**`)
 }
